@@ -1,9 +1,23 @@
 import express from 'express'
 import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
-const prisma = new PrismaClient()
+
+console.log('Initializing Prisma Client...')
+console.log('DATABASE_URL present:', !!process.env.DATABASE_URL)
+console.log('DATABASE_URL length:', process.env.DATABASE_URL?.length)
+
+const prisma = new PrismaClient({
+    datasources: {
+        db: {
+            url: process.env.DATABASE_URL
+        }
+    }
+})
 const PORT = process.env.PORT || 3001
 
 app.use(cors())
