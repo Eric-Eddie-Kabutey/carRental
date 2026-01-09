@@ -115,6 +115,18 @@ app.get('/api/faqs', async (req, res) => {
     }
 })
 
+// TEMP: Seed database
+import { seedDatabase } from './seeder'
+app.get('/api/seed', async (req, res) => {
+    try {
+        await seedDatabase(prisma)
+        res.json({ message: 'Seeding finished' })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ error: 'Seeding failed' })
+    }
+})
+
 // Start server only if not in Vercel serverless environment
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
     app.listen(PORT, () => {
