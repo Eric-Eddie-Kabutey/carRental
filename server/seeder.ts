@@ -87,7 +87,7 @@ export async function seedDatabase(prisma: PrismaClient) {
                 description: 'Rent Cars with VIP number plates in Gambia, unique Luxury symbols that turn any drive into a statement.',
                 summary: 'These highly demanded plates are more than just numbers they are status symbols and conversation starters that demand respect and attention anywhere you go.',
                 includes: [],
-                image: 'https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Rolls-Royce-Cullinan-Rental-Dubai.webp',
+                image: 'https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800',
                 action: 'car'
             })
         }
@@ -189,154 +189,154 @@ export async function seedDatabase(prisma: PrismaClient) {
         {
             brand: 'Lamborghini', model: 'Urus Performante', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
             pricePerDay: 4999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Lamborghini-Urus-Performante-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1662998399321-72983177813a?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Lamborghini', model: 'Huracan EVO', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
             pricePerDay: 5499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Lamborghini-Huracan-EVO-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1594950130617-64b58ab263c9?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Lamborghini', model: 'Aventador SVJ', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
             pricePerDay: 7999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Lamborghini-Aventador-SVJ-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800']
         },
         // Ferrari
         {
             brand: 'Ferrari', model: '296 GTB', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
             pricePerDay: 5999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Ferrari-296-GTB-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Ferrari', model: 'F8 Tributo', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
             pricePerDay: 5499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Ferrari-F8-Tributo-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Ferrari', model: 'SF90 Stradale', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
             pricePerDay: 8999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Ferrari-SF90-Stradale-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Ferrari', model: 'Roma', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 200,
             pricePerDay: 4999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Ferrari-Roma-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800']
         },
         // Rolls Royce
         {
             brand: 'Rolls Royce', model: 'Cullinan', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
             pricePerDay: 7999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Rolls-Royce-Cullinan-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Rolls Royce', model: 'Ghost', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
             pricePerDay: 6999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Rolls-Royce-Ghost-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Rolls Royce', model: 'Phantom', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
             pricePerDay: 8999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Rolls-Royce-Phantom-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800']
         },
         // Mercedes
         {
             brand: 'Mercedes', model: 'S-Class S500', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 1499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-S-Class-S500-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Mercedes', model: 'G63 AMG', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
             pricePerDay: 3999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-G63-AMG-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Mercedes', model: 'AMG GT 63S', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 250,
             pricePerDay: 2999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-AMG-GT-63S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Mercedes', model: 'EQS 450+', year: 2024, bodyType: 'Sedan', fuelType: 'Electric', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 1999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-EQS-450-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Mercedes', model: 'Maybach S680', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
             pricePerDay: 4999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-Maybach-S680-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         // Porsche
         {
             brand: 'Porsche', model: '911 Turbo S', year: 2024, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
             pricePerDay: 3999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Porsche-911-Turbo-S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Porsche', model: 'Taycan Turbo S', year: 2024, bodyType: 'Sedan', fuelType: 'Electric', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 300,
             pricePerDay: 2999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Porsche-Taycan-Turbo-S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Porsche', model: 'Cayenne Turbo', year: 2023, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 1999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Porsche-Cayenne-Turbo-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Porsche', model: 'Panamera Turbo S', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 250,
             pricePerDay: 2499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Porsche-Panamera-Turbo-S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800']
         },
         // McLaren
         {
             brand: 'McLaren', model: '720S', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
             pricePerDay: 5999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/McLaren-720S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800']
         },
         {
             brand: 'McLaren', model: 'Artura', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
             pricePerDay: 4999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/McLaren-Artura-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800']
         },
         {
             brand: 'McLaren', model: 'GT', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
             pricePerDay: 3999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/McLaren-GT-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800']
         },
         // Bentley
         {
             brand: 'Bentley', model: 'Bentayga', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
             pricePerDay: 3999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Bentley-Bentayga-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Bentley', model: 'Continental GT', year: 2024, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
             pricePerDay: 4499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Bentley-Continental-GT-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Bentley', model: 'Flying Spur', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
             pricePerDay: 3499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Bentley-Flying-Spur-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800']
         },
         // Additional Premium Models
         {
             brand: 'Mercedes', model: 'GLE 450', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 899, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-GLE-450-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Porsche', model: 'Macan S', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 1299, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Porsche-Macan-S-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Mercedes', model: 'C63 AMG', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
             pricePerDay: 1499, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Mercedes-C63-AMG-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800']
         },
         {
             brand: 'Bentley', model: 'Continental GTC', year: 2024, bodyType: 'Convertible', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
             pricePerDay: 4999, currency: 'AED',
-            images: ['https://www.luxuryrentals.gm/wp-content/uploads/2024/11/Bentley-Continental-GTC-Rental-Dubai.webp']
+            images: ['https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800']
         }
     ]
 
