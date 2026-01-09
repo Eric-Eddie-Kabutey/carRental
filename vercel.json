@@ -1,7 +1,7 @@
 {
-    "buildCommand": "ls -la && pwd && cd client && npm install && npm run build",
-    "outputDirectory": "client/.next",
-    "installCommand": "ls -la && pwd && cd client && npm install",
+    "buildCommand": "npm install && npm run build",
+    "outputDirectory": ".next",
+    "installCommand": "npm install",
     "framework": "nextjs",
     "rewrites": [
         {
