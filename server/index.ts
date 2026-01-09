@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client'
 
 const app = express()
 const prisma = new PrismaClient()
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 app.use(cors())
 app.use(express.json())
@@ -115,6 +115,12 @@ app.get('/api/faqs', async (req, res) => {
     }
 })
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`)
-})
+// Start server only if not in Vercel serverless environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`)
+    })
+}
+
+// Export for Vercel serverless functions
+export default app
