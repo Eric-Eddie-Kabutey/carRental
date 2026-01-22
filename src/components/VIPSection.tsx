@@ -22,7 +22,7 @@ export default function VIPSection() {
                             </p>
                             <Link
                                 href="/cars"
-                                className="inline-block bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-gray-800 transition-colors"
+                                className="inline-block bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-emerald-500 transition-colors"
                             >
                                 Rent a VIP Car
                             </Link>
@@ -31,7 +31,7 @@ export default function VIPSection() {
                     <AnimateOnScroll animation="fade-in-right" delay={200} className="order-1 md:order-2">
                         <div className="relative h-[500px] rounded-[40px] overflow-hidden shadow-2xl">
                             <ImageWithFallback
-                                src="https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=1200&q=80"
+                                src="/ilya-godze-4jd8GtBpIhM-unsplash.jpg"
                                 alt="VIP Number Plate"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

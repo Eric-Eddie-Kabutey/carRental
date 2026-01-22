@@ -10,7 +10,7 @@ interface LogoProps {
 
 export default function Logo({ className = '', light = true }: LogoProps) {
     return (
-        <Link href="/" className={`flex items-center gap-2 group ${className}`}>
+        <Link href="/" className={`flex items-center justify-center md:justify-start  gap-2 group ${className}`}>
             
             {/* group-hover:bg-[#25D366]/10 group-hover:border-[#25D366]/30 */}
             {/* <div className={`
@@ -27,14 +27,14 @@ export default function Logo({ className = '', light = true }: LogoProps) {
 
             <div className="flex flex-col justify-center">
                 <span className={`
-                    text-[26px] font-bold tracking-[0.1em] uppercase leading-none
+                    text-[36px] font-bold tracking-widest uppercase leading-none
                     ${light ? 'text-white' : 'text-black'}
                 `}>
                     Luxury
                 </span>
                 <span className={`
-                    text-[12px] font-light tracking-[0.9em] uppercase leading-none
-                    ${light ? 'text-[#25D366]' : 'text-[#1a9a4b]'}
+                    text-[22px] font-light tracking-[0.53em] uppercase leading-none
+                    ${light ? 'text-emerald-500' : 'text-emerald-500'}
                 `}>
                     Rentals
                 </span>

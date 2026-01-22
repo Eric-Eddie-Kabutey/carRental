@@ -1,10 +1,13 @@
 import { VehicleService } from '@/services/vehicle-service'
+import { ContentService } from '@/services/content-service'
 import BookingWidget from '@/components/BookingWidget'
 import ImageWithFallback from '@/components/ImageWithFallback'
 
 export default async function CarDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
     const vehicle = await VehicleService.getVehicleById(id)
+    const links = await ContentService.getSocialLinks()
+    const whatsappUrl = links.find(link => link.name === 'whatsapp')?.href || '#'
 
     if (!vehicle) return <div className="text-center py-40">Vehicle not found</div>
 
@@ -16,7 +19,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ id: 
                     {/* Left Column: Gallery & Content (8 cols) */}
                     <div className="lg:col-span-8 space-y-10">
                         {/* Main Image */}
-                        <div className="relative aspect-[16/9] bg-gray-100 rounded-[32px] overflow-hidden shadow-sm">
+                        <div className="relative aspect-video bg-gray-100 rounded-[32px] overflow-hidden shadow-sm">
                             <ImageWithFallback
                                 src={vehicle.images[0]?.url}
                                 alt={vehicle.model}
@@ -61,7 +64,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ id: 
                     {/* Right Column: Booking Widget (4 cols) */}
                     <div className="lg:col-span-4">
                         <div className="sticky top-32">
-                            <BookingWidget vehicle={vehicle} />
+                            <BookingWidget vehicle={vehicle} whatsappUrl={whatsappUrl} />
                         </div>
                     </div>
                 </div>

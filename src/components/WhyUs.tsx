@@ -27,7 +27,7 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
         },
         {
             icon: '/whyUs/map-black.svg',
-            title: 'Premium Car Rental Services Available Throughout Gambia',
+            title: 'Car Rental Services Available Throughout Gambia',
             desc: 'Enjoy seamless doorstep delivery across the Gambia.'
         }
     ]
@@ -35,7 +35,7 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
     return (
         <section className={`py-24 ${dark ? 'bg-black' : 'bg-white'}`}>
             <div className="container mx-auto px-6">
-                <h3 className={`text-4xl md:text-5xl font-light text-center mb-20 ${dark ? 'text-white' : 'text-black'}`}>
+                <h3 className={`text-4xl md:text-5xl font-light capitalize text-center mb-20 ${dark ? 'text-white' : 'text-black'}`}>
                     Why should you rent a car with us?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
@@ -51,10 +51,10 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
                                         className={`object-contain ${dark ? 'brightness-0 invert' : 'brightness-0'}`}
                                     />
                                 </div>
-                                <h4 className={`text-xl font-bold mb-4 leading-snug ${dark ? 'text-white' : 'text-black'}`}>
+                                <h4 className={`text-xl font-bold mb-4 leading-snug capitalize line-clamp-2 ${dark ? 'text-white' : 'text-black'}`}>
                                     {feature.title}
                                 </h4>
-                                <p className={`text-sm font-light leading-relaxed max-w-[250px] ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
+                                <p className={`text-sm font-light leading-relaxed max-w-[250px] capitalize line-clamp-2 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
                                     {feature.desc}
                                 </p>
                             </div>
