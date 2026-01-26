@@ -49,7 +49,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-4">
                     <p>&copy; {new Date().getFullYear()}, All Rights Reserved Luxury Rentals</p>
-                    <p>Design and Developed With ❤️ By <span className="text-gray-300">A Sleepy Person</span></p>
+                    <p>Design and Developed By <span className="text-gray-300">CODERS CLUTCH</span></p>
                 </div>
             </div>
         </footer>

@@ -48,17 +48,17 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                     <div className="flex gap-4">
                         <button
                             onClick={() => scroll('left')}
-                            className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
+                            className="group w-14 h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
                             aria-label="Previous review"
                         >
-                            <ChevronLeft size={24} />
+                            <ChevronLeft className="group-hover:text-white text-black" size={24} />
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="w-14 h-14 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
+                            className="group w-14 h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
                             aria-label="Next review"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="group-hover:text-white text-black" size={24} />
                         </button>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                                 </div>
                             </div>
 
-                            <p className="text-gray-600 font-light leading-relaxed flex-grow italic">
+                            <p className="text-gray-600 font-light leading-relaxed grow italic line-clamp-4">
                                 "{review.content}"
                             </p>
                         </div>

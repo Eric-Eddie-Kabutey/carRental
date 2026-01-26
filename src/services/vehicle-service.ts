@@ -13,6 +13,7 @@ export const VehicleService = {
         }
 
         // Simulating async delay optionally? No need for static.
+        // vehicles.sort((a, b) => Number(a.id) - Number(b.id))
         return vehicles
     },
 

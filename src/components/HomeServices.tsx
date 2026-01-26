@@ -44,7 +44,8 @@ export default function HomeServices() {
 
     return (
         <section className="relative bg-white pb-32">
-            <div className="relative bg-black rounded-[40px] mx-4 md:mx-10 py-24 md:py-32 overflow-hidden">
+            <div className="container"> 
+                <div className="relative bg-black rounded-[40px] mx-4 md:mx-10 py-24 md:py-32 overflow-hidden">
                 <div className="absolute inset-0 opacity-40">
                     <ImageWithFallback
                         src="/home/home-service.webp"
@@ -57,7 +58,7 @@ export default function HomeServices() {
 
                 <div className="relative z-10 container mx-auto px-6 text-center text-white">
                     <h5 className="text-sm font-bold uppercase tracking-[0.2em] mb-2">Our Rental Services</h5>
-                    <h2 className="text-4xl md:text-6xl font-light mb-4 max-w-4xl mx-auto leading-tight truncate">
+                    <h2 className="text-4xl md:text-6xl font-light mb-4 max-w-4xl mx-auto leading-tight">
                         {content.intro?.title || 'That Redefines Luxury Travel'}
                     </h2>
                     <p className="text-gray-300 max-w-2xl mx-auto mb-4 font-light text-lg">
@@ -70,6 +71,7 @@ export default function HomeServices() {
                         View All
                     </Link>
                 </div>
+            </div>
             </div>
 
             <div className="container mx-auto px-6 -mt-24 md:-mt-32 relative z-20 top-20">

@@ -8,12 +8,12 @@ export const MOCK_DATA = {
                 image: 'shen-liu-H2rb85HSrfo-unsplash.jpg'
             },
             intro: {
-                title: 'Live your Gambia dream in style with Luxury Rentals',
+                title: 'Live your Gambian dream in style with Luxury Rentals',
                 summary: 'Cruise in a luxury car. Our team handles every detail, so you can relax and enjoy the city with our chauffeur services in Gambia.'
             },
             rental: {
                 title: 'Rent Your Dream Car',
-                subtitle: 'Luxury Car Rental Services in Gambia',
+                subtitle: 'Cheap Cars for Rent in Gambia',
                 description: 'Travel in style-drive our extraordinary collection of Luxury and Exotic vehicles today!',
                 summary: 'Experience premium comfort with our Hyundai Tucson, sophisticated style with the Mercedes CLA, or reliable elegance with the Toyota Corolla. Our handpicked fleet transforms moments into memories. Day rentals to long-term solutions—every pristine vehicle arrives at your door because your time & impression matter.',
                 includes: [
@@ -22,7 +22,7 @@ export const MOCK_DATA = {
                     'Flexibility: Hourly, Daily, Weekly and Monthly',
                     '24/7 Support and Instant Online Booking'
                 ],
-                image: '/services/freddy-g--e3Qdeqh_E4-unsplash.jpg',
+                image: '/vehicles/xc60.avif',
                 action: 'car'
             },
             chauffeur: {
@@ -41,12 +41,12 @@ export const MOCK_DATA = {
                 action: 'service'
             },
             vip: {
-                title: 'Drive Like a VIP',
-                subtitle: 'Rent Cars with VIP Number Plates',
-                description: 'Rent Cars with VIP number plates in Gambia, unique Luxury symbols that turn any drive into a statement.',
-                summary: 'These highly demanded plates are more than just numbers they are status symbols and conversation starters that demand respect and attention anywhere you go.',
+                title: 'Drive luxury cars',
+                subtitle: 'Experience Luxury',
+                description: 'Rent luxury cars in Gambia. Unique Luxury symbols that turn any drive into a statement.',
+                summary: 'These highly luxurious cars are more than just cars they are status symbols and conversation starters that demand respect and attention anywhere you go.',
                 includes: [],
-                image: '/services/bornil-amin-L6Or6uTKKMg-unsplash.jpg',
+                image: '/vehicles/genesis2021.avif',
                 action: 'car'
             }
         }
@@ -86,22 +86,6 @@ export const MOCK_DATA = {
             content: 'I rent A Car 2 time and the staff was very helpful and cars always new model with and they guide us very well especially Mr Adeel is very sported person really I enjoy the service but next time also. Thanks Guys Mr Adeel Also and there all team.',
             rating: 5,
             role: '3 months ago',
-            isActive: true
-        },
-        {
-            id: '4',
-            name: 'Rohail Awan',
-            content: 'Had a great experience with Mr Malik from Luxury Rentals. Professional. The car was in perfect condition and delivery was free. Definitely recommend renting through him!',
-            rating: 5,
-            role: '2 months ago',
-            isActive: true
-        },
-        {
-            id: '5',
-            name: 'Suleiman Jobe',
-            content: 'Best luxury car rental in Banjul! The service is top notch. I rented a GLE for a wedding and it was spotless.',
-            rating: 5,
-            role: '1 month ago',
             isActive: true
         }
     ],
@@ -168,200 +152,205 @@ export const MOCK_DATA = {
 
     // 5. Vehicles
     vehicles: [
-        // Lamborghini
         {
-            id: '1', brand: 'Hyundai', model: 'Tucson', year: 2022, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
-            pricePerDay: 6500, currency: 'GMD', isActive: true,
-            description: "A versatile and comfortable SUV perfectly suited for Gambian roads. The Hyundai Tucson offers modern features, a spacious interior, and excellent fuel efficiency for your daily travels.",
-            images: [{ url: '/vehicles/duncan-winslow-Xs69Y3k1ru4-unsplash.jpg', isPrimary: true }]
+            id: '1',
+            brand: 'Volvo',
+            model: 'XC60',
+            year: 2022,
+            bodyType: 'SUV',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 250,
+            pricePerDay: 6500,
+            currency: 'GMD',
+            isActive: true,
+            description: "A versatile and comfortable SUV perfectly suited for Gambian roads.",
+            images: [
+                { url: '/vehicles/xc60.avif', isPrimary: true },
+                { url: '/vehicles/xc60.avif', isPrimary: false },
+                { url: '/vehicles/xc60.avif', isPrimary: false },
+                { url: '/vehicles/xc60.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Crystal White', hex: '#F8F8F8' }
+            ]
         },
         {
-            id: '2', brand: 'Mercedes-Benz', model: 'CLA Coupe', year: 2021, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 200,
-            pricePerDay: 8500, currency: 'GMD', isActive: true,
-            description: "Experience the sleek design and premium feel of the Mercedes-Benz CLA. This compact luxury coupe combines sportiness with elegance, making it an ideal choice for city driving and special occasions.",
-            images: [{ url: '/vehicles/erik-mclean-lv4FWmDfb4Y-unsplash.jpg', isPrimary: true }]
+            id: '2',
+            brand: 'Volvo',
+            model: 'XC90',
+            year: 2021,
+            bodyType: 'SUV',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 7,
+            doors: 4,
+            kmPerDay: 200,
+            pricePerDay: 8500,
+            currency: 'GMD',
+            isActive: true,
+            description: "A premium SUV with space, comfort, and a smooth ride for long trips.",
+            images: [
+                { url: '/vehicles/xc90.avif', isPrimary: true },
+                { url: '/vehicles/xc90.avif', isPrimary: false },
+                { url: '/vehicles/xc90.avif', isPrimary: false },
+                { url: '/vehicles/xc90.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Denim Blue', hex: '#1E3A5F' }
+            ]
         },
         {
-            id: '3', brand: 'Toyota', model: 'Corolla', year: 2022, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-            pricePerDay: 4500, currency: 'GMD', isActive: true,
-            description: "The world's most reliable sedan, now available for your journey in Gambia. The Toyota Corolla provides a smooth ride, advanced safety features, and legendary durability for any trip.",
-            images: [{ url: '/vehicles/krish-parmar-HrbMyWmS7yU-unsplash.jpg', isPrimary: true }]
+            id: '3',
+            brand: 'Toyota',
+            model: '4Runner',
+            year: 2022,
+            bodyType: 'SUV',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 300,
+            pricePerDay: 4500,
+            currency: 'GMD',
+            isActive: true,
+            description: "Rugged and reliable SUV that handles tough roads confidently.",
+            images: [
+                { url: '/vehicles/4runner.jpg', isPrimary: true },
+                { url: '/vehicles/4runner.jpg', isPrimary: false },
+                { url: '/vehicles/4runner.jpg', isPrimary: false },
+                { url: '/vehicles/4runner.jpg', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Super White', hex: '#FFFFFF' }
+            ]
         },
         {
-            id: '4', brand: 'Honda', model: 'Civic', year: 2021, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-            pricePerDay: 4800, currency: 'GMD', isActive: true,
-            description: "Sporty, efficient, and packed with technology. The Honda Civic is designed to deliver a fun driving experience while maintaining the comfort and reliability you expect for your rental needs.",
-            images: [{ url: '/vehicles/topsphere-media-ht14f-Hvtcg-unsplash.jpg', isPrimary: true }]
+            id: '4',
+            brand: 'Hyundai',
+            model: 'Accent',
+            year: 2011,
+            bodyType: 'Sedan',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 300,
+            pricePerDay: 4800,
+            currency: 'GMD',
+            isActive: true,
+            description: "Efficient and comfortable sedan for city driving and daily use.",
+            images: [
+                { url: '/vehicles/accent.avif', isPrimary: true },
+                { url: '/vehicles/accent.avif', isPrimary: false },
+                { url: '/vehicles/accent.avif', isPrimary: false },
+                { url: '/vehicles/accent.avif', isPrimary: false },
+                { url: '/vehicles/accent.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Frost White', hex: '#F0F8FF' }
+            ]
+        },
+        {
+            id: '5',
+            brand: 'Genesis',
+            model: 'Genesis',
+            year: 2015,
+            bodyType: 'Sedan',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 250,
+            pricePerDay: 6500,
+            currency: 'GMD',
+            isActive: true,
+            description: "Luxury sedan with premium comfort and smooth performance.",
+            images: [
+                { url: '/vehicles/genesis2015.avif', isPrimary: true },
+                { url: '/vehicles/genesis2015.avif', isPrimary: false },
+                { url: '/vehicles/genesis2015.avif', isPrimary: false },
+                { url: '/vehicles/genesis2015.avif', isPrimary: false },
+                { url: '/vehicles/genesis2015.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Flame Red', hex: '#CE2029' },
+            ]
+        },
+        {
+            id: '6',
+            brand: 'Genesis',
+            model: 'Genesis',
+            year: 2019,
+            bodyType: 'Sedan',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 200,
+            pricePerDay: 8500,
+            currency: 'GMD',
+            isActive: true,
+            description: "Modern luxury sedan with a refined ride and premium interior.",
+            images: [{ url: '/vehicles/genesis2019.jpg', isPrimary: true }],
+            colors: [
+                { name: 'Flame Red', hex: '#CE2029' },
+            ]
+        },
+        {
+            id: '7',
+            brand: 'Genesis',
+            model: 'Genesis',
+            year: 2021,
+            bodyType: 'Sedan',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 300,
+            pricePerDay: 4500,
+            currency: 'GMD',
+            isActive: true,
+            description: "Stylish luxury sedan with comfort, tech, and smooth handling.",
+            images: [
+                { url: '/vehicles/genesis2021.avif', isPrimary: true },
+                { url: '/vehicles/genesis2021.avif', isPrimary: false },
+                { url: '/vehicles/genesis2021.avif', isPrimary: false },
+                { url: '/vehicles/genesis2021.avif', isPrimary: false },
+                { url: '/vehicles/genesis2021.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Flame Red', hex: '#CE2029' },
+            ]
+        },
+        {
+            id: '8',
+            brand: 'RAM',
+            model: '1500',
+            year: 2024,
+            bodyType: 'Truck',
+            fuelType: 'Petrol',
+            transmission: 'Automatic',
+            seats: 5,
+            doors: 4,
+            kmPerDay: 300,
+            pricePerDay: 4800,
+            currency: 'GMD',
+            isActive: true,
+            description: "Powerful pickup truck with serious road presence and comfort.",
+            images: [
+                { url: '/vehicles/ram2024.avif', isPrimary: true },
+                { url: '/vehicles/ram2024.avif', isPrimary: false },
+                { url: '/vehicles/ram2024.avif', isPrimary: false },
+                { url: '/vehicles/ram2024.avif', isPrimary: false },
+                { url: '/vehicles/ram2024.avif', isPrimary: false },
+            ],
+            colors: [
+                { name: 'Flame Red', hex: '#CE2029' },
+            ]
         }
-
-        // // Ferrari
-        // {
-        //     id: 'ferrari-296-gtb', brand: 'Ferrari', model: '296 GTB', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 5999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'ferrari-f8-tributo', brand: 'Ferrari', model: 'F8 Tributo', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
-        //     pricePerDay: 5499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'ferrari-sf90-stradale', brand: 'Ferrari', model: 'SF90 Stradale', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 8999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'ferrari-roma', brand: 'Ferrari', model: 'Roma', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 200,
-        //     pricePerDay: 4999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // // Rolls Royce
-        // {
-        //     id: 'rolls-royce-cullinan', brand: 'Rolls Royce', model: 'Cullinan', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
-        //     pricePerDay: 7999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'rolls-royce-ghost', brand: 'Rolls Royce', model: 'Ghost', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
-        //     pricePerDay: 6999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'rolls-royce-phantom', brand: 'Rolls Royce', model: 'Phantom', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
-        //     pricePerDay: 8999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1631295868223-632658513171?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // // Mercedes
-        // {
-        //     id: 'mercedes-s-class-s500', brand: 'Mercedes', model: 'S-Class S500', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 1499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mercedes-g63-amg', brand: 'Mercedes', model: 'G63 AMG', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
-        //     pricePerDay: 3999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mercedes-amg-gt-63s', brand: 'Mercedes', model: 'AMG GT 63S', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 250,
-        //     pricePerDay: 2999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mercedes-eqs-450', brand: 'Mercedes', model: 'EQS 450+', year: 2024, bodyType: 'Sedan', fuelType: 'Electric', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 1999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mercedes-maybach-s680', brand: 'Mercedes', model: 'Maybach S680', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 200,
-        //     pricePerDay: 4999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // // Porsche
-        // {
-        //     id: 'porsche-911-turbo-s', brand: 'Porsche', model: '911 Turbo S', year: 2024, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 3999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'porsche-taycan-turbo-s', brand: 'Porsche', model: 'Taycan Turbo S', year: 2024, bodyType: 'Sedan', fuelType: 'Electric', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 2999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'porsche-cayenne-turbo', brand: 'Porsche', model: 'Cayenne Turbo', year: 2023, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 1999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'porsche-panamera-turbo-s', brand: 'Porsche', model: 'Panamera Turbo S', year: 2024, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 4, kmPerDay: 250,
-        //     pricePerDay: 2499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // // McLaren
-        // {
-        //     id: 'mclaren-720s', brand: 'McLaren', model: '720S', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
-        //     pricePerDay: 5999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mclaren-artura', brand: 'McLaren', model: 'Artura', year: 2024, bodyType: 'Coupe', fuelType: 'Hybrid', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 200,
-        //     pricePerDay: 4999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mclaren-gt', brand: 'McLaren', model: 'GT', year: 2023, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 2, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 3999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // // Bentley
-        // {
-        //     id: 'bentley-bentayga', brand: 'Bentley', model: 'Bentayga', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
-        //     pricePerDay: 3999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'bentley-continental-gt', brand: 'Bentley', model: 'Continental GT', year: 2024, bodyType: 'Coupe', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 4499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'bentley-flying-spur', brand: 'Bentley', model: 'Flying Spur', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 250,
-        //     pricePerDay: 3499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-
-        // Additional Premium Models
-        // {
-        //     id: 'mercedes-gle-450', brand: 'Mercedes', model: 'GLE 450', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 899, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'porsche-macan-s', brand: 'Porsche', model: 'Macan S', year: 2024, bodyType: 'SUV', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 1299, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'mercedes-c63-amg', brand: 'Mercedes', model: 'C63 AMG', year: 2023, bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', seats: 5, doors: 4, kmPerDay: 300,
-        //     pricePerDay: 1499, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1618765373808-0b5c1970258d?auto=format&fit=crop&w=800', isPrimary: true }]
-        // },
-        // {
-        //     id: 'bentley-continental-gtc', brand: 'Bentley', model: 'Continental GTC', year: 2024, bodyType: 'Convertible', fuelType: 'Petrol', transmission: 'Automatic', seats: 4, doors: 2, kmPerDay: 250,
-        //     pricePerDay: 4999, currency: 'AED', isActive: true,
-        //     description: "Experience the ultimate in luxury and performance with this premium vehicle. Whether for a special occasion or a weekend getaway, this car offers unmatched comfort and style.",
-        //     images: [{ url: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800', isPrimary: true }]
-        // }
     ]
+
 }

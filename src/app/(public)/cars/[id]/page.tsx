@@ -16,7 +16,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ id: 
                     {/* Left Column: Gallery & Content (8 cols) */}
                     <div className="lg:col-span-8 space-y-10">
                         {/* Main Image */}
-                        <div className="relative aspect-[16/9] bg-gray-100 rounded-[32px] overflow-hidden shadow-sm">
+                        <div className="relative aspect-video bg-gray-100 rounded-[32px] overflow-hidden shadow-sm">
                             <ImageWithFallback
                                 src={vehicle.images[0]?.url}
                                 alt={vehicle.model}

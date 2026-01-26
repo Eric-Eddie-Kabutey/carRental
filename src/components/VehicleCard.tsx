@@ -48,13 +48,13 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             {/* Title & Badge Section */}
             <div className="relative">
                 <h3 className="text-xl font-bold text-gray-900 leading-tight mb-4 truncate">{vehicle.brand} {vehicle.model}</h3>
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start pb-2">
                     <p className="text-gray-500 text-sm">{vehicle.transmission}</p>
 
                     {/* Special Plate Badge */}
-                    <div className="border border-gray-400 rounded-[10px] mb-2 px-2 py-0.5 ml-auto mt-[-2px]">
+                    {/* <div className="border border-gray-400 rounded-[10px] mb-2 px-2 py-0.5 ml-auto mt-[-2px]">
                         <span className="text-[10px] font-bold text-gray-700 uppercase tracking-tight">Special Number Plate</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

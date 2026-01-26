@@ -12,8 +12,8 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
     const features = [
         {
             icon: '/whyUs/cars.webp',
-            title: 'Premium Cars for Rent in Gambia',
-            desc: 'Premium Cars and VIP rentals suitable for family and business use.'
+            title: 'Luxury Cars for Rent in Gambia',
+            desc: 'Luxury Cars and VIP rentals suitable for family and business use.'
         },
         {
             icon: '/whyUs/top-rating.webp',
@@ -27,7 +27,7 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
         },
         {
             icon: '/whyUs/map-black.svg',
-            title: 'Premium Car Rental Services Available Throughout Gambia',
+            title: 'Luxury Car Rental Services Available Throughout Gambia',
             desc: 'Enjoy seamless doorstep delivery across the Gambia.'
         }
     ]

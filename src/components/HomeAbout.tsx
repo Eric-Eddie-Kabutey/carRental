@@ -14,7 +14,7 @@ export default function HomeAbout() {
                     <div className="relative h-[500px] md:h-[600px] w-full rounded-[40px] overflow-hidden group">
 
                         <ImageWithFallback
-                            src="/ilya-godze-4jd8GtBpIhM-unsplash.jpg"
+                            src="/vehicles/genesis2019.jpg"
                             alt="Pure Luxury background"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />

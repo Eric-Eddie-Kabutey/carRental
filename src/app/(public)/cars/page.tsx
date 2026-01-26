@@ -208,7 +208,6 @@ export default function CarsPage() {
                                         <option value="price-asc">Price: Low to High</option>
                                         <option value="price-desc">Price: High to Low</option>
                                     </select>
-                                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
                                 </div>
                             </div>
                         </div>
@@ -219,7 +218,7 @@ export default function CarsPage() {
                                 <RefreshCw className="w-8 h-8 animate-spin text-gray-400" />
                             </div>
                         ) : filteredVehicles.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                                 {filteredVehicles.map(vehicle => (
                                     <VehicleCard key={vehicle.id} vehicle={vehicle} />
                                 ))}
