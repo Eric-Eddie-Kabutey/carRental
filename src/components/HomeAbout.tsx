@@ -21,7 +21,7 @@ export default function HomeAbout() {
 
 
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-6 md:p-12">
-                            <span className="text-white/70 text-sm font-bold uppercase tracking-[0.3em] mb-6">About Luxury Rentals</span>
+                            <span className="text-emerald-500 text-sm font-bold uppercase tracking-[0.3em] mb-6">About Luxury Rentals</span>
                             <h2 className="text-4xl md:text-7xl font-light text-white uppercase mb-8 leading-tight">
                                 Pure Luxury.<br />Pure Perfection.
                             </h2>

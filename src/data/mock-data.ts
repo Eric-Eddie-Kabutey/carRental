@@ -62,6 +62,13 @@ export const MOCK_DATA = {
         { id: '6', name: 'Bentley', file: 'bentley-motors-2-20260108155752.svg', isActive: true }
     ],
 
+    links: [
+        { id: '1', name: 'instagram', href: 'https://instagram.com' },
+        { id: '2', name: 'youtube', href: 'https://youtube.com' },
+        { id: '3', name: 'facebook', href: 'https://facebook.com' },
+        { id: '4', name: 'whatsapp', href: 'https://wa.me/+2202720190' },
+    ],
+
     // 3. Testimonials
     testimonials: [
         {
@@ -69,7 +76,7 @@ export const MOCK_DATA = {
             name: 'Mahammed Safan',
             content: 'The process was smooth and easy to rent a car in Gambia because of Luxury Rentals and their staff named Mr. Mohammed. He was very helpful in selecting my comfort car which I rented with the help of Mr. Saad. I recommend every person who is going to visit Gambia and want to rent a car, choose LUXURY RENTALS.',
             rating: 5,
-            role: '2 months ago',
+            date: '2 Feb, 2025',
             isActive: true
         },
         {
@@ -77,7 +84,7 @@ export const MOCK_DATA = {
             name: 'Mohammed Shuhaib',
             content: 'I had the best experience with this car rental company! The entire process was smooth, quick, and hassle-free. A special thanks to Mohammed Saad for his excellent service, professionalism, and friendly attitude. He made sure everything was perfectly arranged and went above and beyond to ensure customer satisfaction. Highly recommended!',
             rating: 5,
-            role: '2 months ago',
+            date: '2 Jan, 2025',
             isActive: true
         },
         {
@@ -85,7 +92,7 @@ export const MOCK_DATA = {
             name: 'Travel with Zahid',
             content: 'I rent A Car 2 time and the staff was very helpful and cars always new model with and they guide us very well especially Mr Adeel is very sported person really I enjoy the service but next time also. Thanks Guys Mr Adeel Also and there all team.',
             rating: 5,
-            role: '3 months ago',
+            date: '2 Dec, 2024',
             isActive: true
         }
     ],

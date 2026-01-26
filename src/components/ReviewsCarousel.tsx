@@ -9,7 +9,7 @@ interface Testimonial {
     name: string
     content: string
     rating: number
-    role?: string
+    date: string
 }
 
 interface ReviewsCarouselProps {
@@ -40,7 +40,7 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
                     <AnimateOnScroll animation="fade-in-left">
-                        <h2 className="text-4xl md:text-6xl font-light text-black uppercase tracking-tight">
+                        <h2 className="text-4xl md:text-6xl font-light text-gray-900 uppercase tracking-tight">
                             Customer <br /> Reviews
                         </h2>
                     </AnimateOnScroll>
@@ -48,17 +48,17 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                     <div className="flex gap-4">
                         <button
                             onClick={() => scroll('left')}
-                            className="group w-14 h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
+                            className="group w-14 h-14 rounded-full border border-gray-900 flex items-center justify-center hover:bg-gray-900 transition-all cursor-pointer"
                             aria-label="Previous review"
                         >
-                            <ChevronLeft className="group-hover:text-white text-black" size={24} />
+                            <ChevronLeft className="w-6 h-6 text-gray-900 group-hover:text-white " />
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="group w-14 h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"
+                            className="group w-14 h-14 rounded-full border border-gray-900 flex items-center justify-center hover:bg-gray-900 transition-all cursor-pointer"
                             aria-label="Next review"
                         >
-                            <ChevronRight className="group-hover:text-white text-black" size={24} />
+                            <ChevronRight className="w-6 h-6 text-gray-900 group-hover:text-white " />
                         </button>
                     </div>
                 </div>
@@ -75,12 +75,12 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                         >
                             <div className="flex items-center justify-between mb-8">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-xl uppercase">
+                                    <div className="w-12 h-12 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold text-xl uppercase">
                                         {review.name.charAt(0)}
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-black leading-none mb-1">{review.name}</h4>
-                                        <p className="text-gray-400 text-xs uppercase tracking-widest">{review.role || 'Verified Customer'}</p>
+                                        <h4 className="font-bold text-gray-900 leading-none mb-1">{review.name}</h4>
+                                        <p className="text-gray-400 text-xs uppercase tracking-widest">{review.date}</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-0.5 text-amber-400">

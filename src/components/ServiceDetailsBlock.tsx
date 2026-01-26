@@ -1,8 +1,9 @@
-'use client'
+
 
 import React from 'react'
 import Link from 'next/link'
 import ImageWithFallback from '@/components/ImageWithFallback'
+import { ContentService } from '@/services/content-service'
 
 interface ServiceDetailsBlockProps {
     id: string
@@ -17,7 +18,7 @@ interface ServiceDetailsBlockProps {
     reverse?: boolean
 }
 
-export default function ServiceDetailsBlock({
+export default async function ServiceDetailsBlock({
     id,
     title,
     subtitle,
@@ -34,13 +35,16 @@ export default function ServiceDetailsBlock({
     const textClass = isDark ? 'text-white' : 'text-black'
     const subtitleClass = isDark ? 'text-gray-400' : 'text-gray-600'
 
+    const links = await ContentService.getSocialLinks();
+    const whatsappLink = links.find(link => link.name === 'whatsapp')?.href || '#';
+
     return (
         <section id={id} className={`${bgClass} ${textClass} py-20 md:py-32 transition-colors duration-500`}>
             <div className="container mx-auto px-6">
                 <div className={`flex flex-col md:flex-row items-center gap-16 ${reverse ? 'md:flex-row-reverse' : ''}`}>
                     {/* Content */}
                     <div className="w-full md:w-1/2">
-                        <h3 className={`text-lg font-semibold mb-2 uppercase tracking-widest ${isDark ? 'text-gray-400' : 'text-[#25D366]'}`}>
+                        <h3 className={`text-xs font-semibold mb-2 uppercase tracking-widest text-emerald-500`}>
                             {title}
                         </h3>
                         <h4 className="text-4xl md:text-5xl font-light mb-8 leading-tight">
@@ -60,7 +64,7 @@ export default function ServiceDetailsBlock({
                             <ul className="space-y-4 mb-10">
                                 {includes.map((item, i) => (
                                     <li key={i} className="flex items-center text-gray-300">
-                                        <span className="w-2 h-2 bg-[#25D366] rounded-full mr-4" />
+                                        <span className="w-2 h-2 bg-emerald-500 rounded-full mr-4" />
                                         <span className={isDark ? 'text-gray-300' : 'text-gray-700'}>{item}</span>
                                     </li>
                                 ))}
@@ -68,12 +72,12 @@ export default function ServiceDetailsBlock({
                         )}
 
                         <Link
-                            href={action === 'car' ? (id === 'vip' ? '/cars?vip=true' : '/cars') : '/contact'}
+                            href={action === 'car' ? (id === 'vip' ? '/cars?vip=true' : '/cars') : `${whatsappLink}`}
                             className={`
                                 inline-block px-10 py-4 rounded-full font-bold uppercase tracking-wide transition-all
                                 ${isDark
-                                    ? 'bg-white text-black hover:bg-[#25D366] hover:text-white'
-                                    : 'bg-black text-white hover:bg-[#25D366]'}
+                                    ? 'bg-white text-black hover:bg-emerald-500 hover:text-white'
+                                    : 'bg-black text-white hover:bg-emerald-500'}
                             `}
                         >
                             {action === 'car' ? 'Explore Fleet' : 'Contact Us'}

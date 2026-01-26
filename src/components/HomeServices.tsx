@@ -21,8 +21,8 @@ export default function HomeServices() {
     const services = [
         {
             id: 'rental',
-            title: content.rental?.subtitle || 'Luxury Car Rental Services',
-            description: content.rental?.description || 'Find the best Luxury Car Rentals in Gambia with Luxury Rentals.',
+            title: content.rental?.subtitle || 'Car Rental Services',
+            description: content.rental?.description || 'Find the best Car Rentals in Gambia with Luxury Rentals.',
             image: content.rental?.image || '/services/freddy-g--e3Qdeqh_E4-unsplash.jpg',
             link: '/services#rental'
         },
@@ -57,11 +57,11 @@ export default function HomeServices() {
                 <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black z-0" />
 
                 <div className="relative z-10 container mx-auto px-6 text-center text-white">
-                    <h5 className="text-sm font-bold uppercase tracking-[0.2em] mb-2">Our Rental Services</h5>
-                    <h2 className="text-4xl md:text-6xl font-light mb-4 max-w-4xl mx-auto leading-tight">
+                    <h5 className="text-sm text-emerald-500 font-bold uppercase tracking-[0.2em] mb-2">Our Rental Services</h5>
+                    <h2 className="text-4xl md:text-6xl font-light mb-4 max-w-4xl capitalize mx-auto leading-tight ">
                         {content.intro?.title || 'That Redefines Luxury Travel'}
                     </h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto mb-4 font-light text-lg">
+                    <p className="text-gray-300 max-w-2xl mx-auto mb-4 capitalize font-light text-lg">
                         {content.intro?.summary || 'We specialize in Luxury Car hire across Gambia, creating complete Luxury experiences.'}
                     </p>
                     <Link
@@ -75,10 +75,10 @@ export default function HomeServices() {
             </div>
 
             <div className="container mx-auto px-6 -mt-24 md:-mt-32 relative z-20 top-20">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3">
                     {services.map((service, idx) => (
-                        <div key={idx} className="rounded-[30px] p-4 flex flex-col h-full group transition-transform duration-300">
-                            <div className="relative h-[250px] w-full mb-8 rounded-[24px] overflow-hidden">
+                        <div key={idx} className="p-4 flex flex-col h-full group transition-transform duration-300">
+                            <div className="relative h-[250px] w-full mb-6 rounded-[14px] overflow-hidden">
                                 <ImageWithFallback
                                     src={service.image}
                                     alt={service.title}
@@ -86,15 +86,15 @@ export default function HomeServices() {
                                 />
                             </div>
                             <div className="flex flex-col grow">
-                                <h3 className="text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
+                                <h3 className="text-2xl font-bold mb-2 text-black group-hover:text-gray-700 transition-colors line-clamp-1">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-500 mb-8 font-light leading-relaxed grow">
+                                <p className="text-gray-500 mb-8 font-light leading-relaxed grow line-clamp-2">
                                     {service.description}
                                 </p>
                                 <Link
                                     href={service.link}
-                                    className="text-black font-bold uppercase text-sm tracking-widest border-b border-black/10 pb-2 w-max hover:border-black transition-all"
+                                    className="text-black font-bold uppercase text-xs tracking-widest border-b border-black/10 pb-2 w-max hover:border-black transition-all"
                                 >
                                     Know More
                                 </Link>

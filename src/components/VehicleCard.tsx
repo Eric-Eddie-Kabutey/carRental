@@ -37,11 +37,11 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             </div>
 
             {/* Image Area */}
-            <div className="relative aspect-16/10 mb-2 flex items-center justify-center">
+            <div className="relative aspect-16/10 mb-2 overflow-hidden rounded-[10px] border border-gray-300 isolate">
                 <ImageWithFallback
                     src={vehicle.images?.[0]?.url}
                     alt={vehicle.model}
-                    className="w-full h-[200px] object-cover border border-gray-300 rounded-[10px]"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
             </div>
 
@@ -103,7 +103,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
 
                     <Link
                         href={`/cars/${vehicle.id}`}
-                        className="w-12 h-10 rounded-full border border-[#25D366] text-[#25D366] flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors"
+                        className="w-12 h-10 rounded-full border border-emerald-500 text-emerald-500 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"
                     >
                         <MessageCircle className="w-5 h-5" />
                     </Link>
