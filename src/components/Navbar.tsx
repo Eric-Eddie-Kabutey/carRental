@@ -25,10 +25,9 @@ export default function Navbar() {
 
     useEffect(() => {
         if (isHomePage) {
-            const timer = setTimeout(() => {
-                setIsVisible(true)
-            }, 2500)
-            return () => clearTimeout(timer)
+            const handleVideoReady = () => setIsVisible(true)
+            window.addEventListener('app-video-ready', handleVideoReady)
+            return () => window.removeEventListener('app-video-ready', handleVideoReady)
         } else {
             setIsVisible(true)
         }
@@ -49,14 +48,14 @@ export default function Navbar() {
     }, [isMenuOpen])
 
     const navLinks = [
-        { name: 'OUR SERVICES', href: '/services' },
+        { name: 'OUR SERVICES', href: '/#services' },
         { name: 'ABOUT US', href: '/about' },
         { name: 'OUR FLEET', href: '/cars' },
     ]
 
     return (
         <nav
-            className={`fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 text-white transition-opacity duration-2000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
+            className={`fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 text-white transition-opacity duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
                 }`}
         >
             <div className="container mx-auto px-6 h-24 flex items-center justify-between">
@@ -107,6 +106,7 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                // onClick={() => setIsMenuOpen(false)}
                                 className={`text-2xl font-bold tracking-tighter hover:text-emerald-500 transition-colors ${pathname === link.href ? 'text-emerald-500' : 'text-white'}`}
                             >
                                 {link.name}

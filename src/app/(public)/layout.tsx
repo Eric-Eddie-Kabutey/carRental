@@ -10,8 +10,8 @@ const redHat = Red_Hat_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'LuxuryRentals | Premium Car Rental',
-  description: 'Rent the world\'s most exclusive cars in Gambia.',
+  title: 'EasyCarRentals | Reliable Car Rental',
+  description: 'Rent the world\'s most affordable and reliable cars in Gambia.',
 }
 
 export default function RootLayout({

@@ -21,12 +21,13 @@ export default function AboutView({ brands, servicesData, faqs }: AboutViewProps
         <main className="bg-white min-h-screen text-black overflow-x-hidden">
             {/* Hero Section */}
             <section className="relative h-[80vh] w-full overflow-hidden">
-                <div className="absolute inset-0 bg-black/50 z-10" />
+                <div className="absolute inset-0 bg-black/80 z-10" />
                 <ImageWithFallback
-                    src="/bornil-amin-zWF4s53USyc-unsplash.jpg"
+                    src="vehicles/4runner.jpg"
                     alt="Luxury Fleet"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
+
                 <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-4">
                     <AnimateOnScroll animation="fade-in-up" delay={500}>
                         <h1 className="text-5xl md:text-8xl font-light mb-6 tracking-tight uppercase max-w-5xl leading-tight">
@@ -60,13 +61,13 @@ export default function AboutView({ brands, servicesData, faqs }: AboutViewProps
                             </div>
                             <div className="space-y-6 text-gray-600 text-lg md:text-xl font-light leading-relaxed">
                                 <p>
-                                    A team of Luxury Enthusiasts and Hospitality experts founded Luxury Rentals with the aim to provide the highest quality service with the most premium vehicles in the market to our customers.
+                                    A team of Luxury Enthusiasts and Hospitality experts founded Easy Car Rentals with the aim to provide the highest quality service with the most premium vehicles in the market to our customers.
                                 </p>
                                 <p>
-                                    We started as a Boutique Car Rental and soon grew into a trusted provider of Chauffeured experiences. Our team has ensured that Luxury Rentals becomes synonymous with reliability, discretion and obsession for customer satisfaction.
+                                    Our team has ensured that Easy Car Rentals becomes synonymous with reliability, discretion and obsession for customer satisfaction.
                                 </p>
                                 <p>
-                                    As the best luxury car service in Gambia, we create memorable experiences with a focus on luxury and personalization.
+                                    As the best luxury car service in Gambia, we create memorable experiences with a focus on affordability and reliability.
                                 </p>
                             </div>
                         </div>
@@ -74,7 +75,7 @@ export default function AboutView({ brands, servicesData, faqs }: AboutViewProps
                     <AnimateOnScroll animation="fade-in-right" delay={200}>
                         <div className="relative h-[600px] rounded-[40px] overflow-hidden shadow-2xl">
                             <ImageWithFallback
-                                src="/vehicles/erik-mclean-lv4FWmDfb4Y-unsplash.jpg"
+                                src="/vehicles/xc90.jpg"
                                 alt="Luxury Car Close-up"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

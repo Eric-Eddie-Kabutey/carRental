@@ -9,11 +9,11 @@ export const VehicleService = {
             vehicles = vehicles.filter(v => v.brand.toLowerCase() === filters.brand?.toLowerCase())
         }
         if (filters?.maxPrice) {
-            vehicles = vehicles.filter(v => v.pricePerDay <= filters.maxPrice!)
+            vehicles = vehicles.filter(v => v.prices.kombo <= filters.maxPrice!)
         }
 
         // Simulating async delay optionally? No need for static.
-        // vehicles.sort((a, b) => Number(a.id) - Number(b.id))
+        vehicles.sort((a, b) => Number(a.id) - Number(b.id))
         return vehicles
     },
 

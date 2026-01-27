@@ -1,33 +1,47 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import VehicleCard, { Vehicle } from '@/components/VehicleCard'
 import { VehicleService } from '@/services/vehicle-service'
-import { Search, SlidersHorizontal, ChevronDown, RefreshCw } from 'lucide-react'
+import { Search, SlidersHorizontal, ChevronDown, RefreshCw, X, Filter } from 'lucide-react'
 
 function CarsContent() {
     const [vehicles, setVehicles] = useState<Vehicle[]>([])
-    const [filteredVehicles, setFilteredVehicles] = useState<Vehicle[]>([])
+    const [filteredVehicles, setFilteredVehicles] = useState<any[]>([])
+    const gridRef = useRef<HTMLDivElement>(null)
     const [loading, setLoading] = useState(true)
 
     // Filters
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedBrand, setSelectedBrand] = useState<string>('all')
     const [selectedBodyType, setSelectedBodyType] = useState<string>('all')
-    const [priceRange, setPriceRange] = useState<number>(100000)
+    const [selectedTransmission, setSelectedTransmission] = useState<string>('all')
+    const [selectedFuelType, setSelectedFuelType] = useState<string>('all')
+    const [selectedSeats, setSelectedSeats] = useState<string>('all')
+    const [priceRange, setPriceRange] = useState<number>(10000)
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
 
     // Sort
-    const [sortBy, setSortBy] = useState<string>('newest')
+    const [sortBy, setSortBy] = useState<string>('id')
 
     const searchParams = useSearchParams()
 
-    // Handle search query from URL
+    // Handle search query and other filters from URL
     useEffect(() => {
         const search = searchParams.get('search')
-        if (search) {
-            setSearchTerm(search)
-        }
+        const brand = searchParams.get('brand')
+        const bodyType = searchParams.get('bodyType')
+        const transmission = searchParams.get('transmission')
+        const fuelType = searchParams.get('fuelType')
+        const seats = searchParams.get('seats')
+
+        if (search) setSearchTerm(search)
+        if (brand && brand !== 'all') setSelectedBrand(brand)
+        if (bodyType && bodyType !== 'all') setSelectedBodyType(bodyType)
+        if (transmission && transmission !== 'all') setSelectedTransmission(transmission)
+        if (fuelType && fuelType !== 'all') setSelectedFuelType(fuelType)
+        if (seats && seats !== 'all') setSelectedSeats(seats)
     }, [searchParams])
 
     // Fetch vehicles (Static)
@@ -49,6 +63,9 @@ function CarsContent() {
     // Get unique options
     const brands = Array.from(new Set(vehicles.map(v => v.brand))).sort()
     const bodyTypes = Array.from(new Set(vehicles.map(v => v.bodyType).filter(Boolean))).sort()
+    const transmissions = Array.from(new Set(vehicles.map(v => v.transmission))).sort()
+    const fuelTypes = Array.from(new Set(vehicles.map(v => v.fuelType))).sort()
+    const seatOptions = Array.from(new Set(vehicles.map(v => v.seats))).sort((a, b) => a - b)
 
     // Apply filters and sort
     useEffect(() => {
@@ -56,8 +73,13 @@ function CarsContent() {
 
         // 1. Filter
         if (searchTerm) {
+            const term = searchTerm.toLowerCase()
             result = result.filter(v =>
-                `${v.brand} ${v.model}`.toLowerCase().includes(searchTerm.toLowerCase())
+                v.brand.toLowerCase().includes(term) ||
+                v.model.toLowerCase().includes(term) ||
+                v.bodyType?.toLowerCase().includes(term) ||
+                v.fuelType.toLowerCase().includes(term) ||
+                v.transmission.toLowerCase().includes(term)
             )
         }
         if (selectedBrand !== 'all') {
@@ -66,43 +88,71 @@ function CarsContent() {
         if (selectedBodyType !== 'all') {
             result = result.filter(v => v.bodyType === selectedBodyType)
         }
-        result = result.filter(v => v.pricePerDay <= priceRange)
+        if (selectedTransmission !== 'all') {
+            result = result.filter(v => v.transmission === selectedTransmission)
+        }
+        if (selectedFuelType !== 'all') {
+            result = result.filter(v => v.fuelType === selectedFuelType)
+        }
+        if (selectedSeats !== 'all') {
+            result = result.filter(v => v.seats === Number(selectedSeats))
+        }
+        result = result.filter(v => (v.prices?.kombo ?? 0) <= priceRange)
 
         // 2. Sort
         switch (sortBy) {
             case 'price-asc':
-                result.sort((a, b) => a.pricePerDay - b.pricePerDay)
+                result.sort((a, b) => (a.prices?.kombo ?? 0) - (b.prices?.kombo ?? 0))
                 break
             case 'price-desc':
-                result.sort((a, b) => b.pricePerDay - a.pricePerDay)
+                result.sort((a, b) => (b.prices?.kombo ?? 0) - (a.prices?.kombo ?? 0))
                 break
             case 'newest':
-            default:
-                // Assuming original order is relatively "newest" or by ID, 
-                // but since we don't have a date field other than year, we can sort by year then ID
                 result.sort((a, b) => b.year - a.year)
+                break
+            case 'id':
+            default:
+                // Sort by ID as requested by the user
+                result.sort((a, b) => Number(a.id) - Number(b.id))
                 break
         }
 
         setFilteredVehicles(result)
-    }, [searchTerm, selectedBrand, selectedBodyType, priceRange, sortBy, vehicles])
+    }, [searchTerm, selectedBrand, selectedBodyType, selectedTransmission, selectedFuelType, selectedSeats, priceRange, sortBy, vehicles])
 
     const clearFilters = () => {
         setSearchTerm('')
         setSelectedBrand('all')
         setSelectedBodyType('all')
-        setPriceRange(100000)
-        setSortBy('newest')
+        setSelectedTransmission('all')
+        setSelectedFuelType('all')
+        setSelectedSeats('all')
+        setPriceRange(10000)
+        setSortBy('id')
+    }
+    const scrollToResults = () => {
+        gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
 
     return (
         <div className="min-h-screen bg-gray-50 pt-32 pb-16">
             <div className="container">
 
+                {/* Mobile Filter Toggle */}
+                <div className="lg:hidden mb-6">
+                    <button
+                        onClick={() => setIsFilterOpen(!isFilterOpen)}
+                        className="w-full flex items-center justify-center gap-2 bg-white border border-gray-200 py-4 rounded-2xl shadow-sm text-gray-900 font-bold hover:bg-gray-50 transition-all active:scale-[0.98]"
+                    >
+                        {isFilterOpen ? <X className="w-5 h-5" /> : <SlidersHorizontal className="w-5 h-5" />}
+                        {isFilterOpen ? 'Close Filters' : 'Show Filters'}
+                    </button>
+                </div>
+
                 <div className="flex flex-col lg:flex-row gap-4">
 
                     {/* Left Sidebar - Filters */}
-                    <aside className="w-full lg:w-1/6 shrink-0">
+                    <aside className={`w-full lg:w-1/6 shrink-0 transition-all duration-300 ease-in-out ${isFilterOpen ? 'block' : 'hidden lg:block'}`}>
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-3 py-4 sticky top-28">
 
                             {/* Header */}
@@ -153,7 +203,7 @@ function CarsContent() {
                             </div>
 
                             {/* Body Type Filter */}
-                            <div className="mb-8">
+                            <div className="mb-6">
                                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Body Type</label>
                                 <div className="relative">
                                     <select
@@ -164,6 +214,60 @@ function CarsContent() {
                                         <option value="all">Select Body Type</option>
                                         {bodyTypes.map(type => (
                                             <option key={type} value={type}>{type}</option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                </div>
+                            </div>
+
+                            {/* Transmission Filter */}
+                            <div className="mb-6">
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Transmission</label>
+                                <div className="relative">
+                                    <select
+                                        value={selectedTransmission}
+                                        onChange={(e) => setSelectedTransmission(e.target.value)}
+                                        className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl text-xs text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent cursor-pointer transition-all shadow-sm"
+                                    >
+                                        <option value="all">Select Transmission</option>
+                                        {transmissions.map(item => (
+                                            <option key={item} value={item}>{item}</option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                </div>
+                            </div>
+
+                            {/* Fuel Type Filter */}
+                            <div className="mb-6">
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Fuel Type</label>
+                                <div className="relative">
+                                    <select
+                                        value={selectedFuelType}
+                                        onChange={(e) => setSelectedFuelType(e.target.value)}
+                                        className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl text-xs text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent cursor-pointer transition-all shadow-sm"
+                                    >
+                                        <option value="all">Select Fuel Type</option>
+                                        {fuelTypes.map(item => (
+                                            <option key={item} value={item}>{item}</option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                                </div>
+                            </div>
+
+                            {/* Seats Filter */}
+                            <div className="mb-8">
+                                <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Seats</label>
+                                <div className="relative">
+                                    <select
+                                        value={selectedSeats}
+                                        onChange={(e) => setSelectedSeats(e.target.value)}
+                                        className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl text-xs text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent cursor-pointer transition-all shadow-sm"
+                                    >
+                                        <option value="all">Select Seats</option>
+                                        {seatOptions.map(item => (
+                                            <option key={item} value={item}>{item} Seats</option>
                                         ))}
                                     </select>
                                     <ChevronDown className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
@@ -192,7 +296,10 @@ function CarsContent() {
                             </div>
 
                             {/* Sidebar Action Button */}
-                            <button className="w-full bg-black text-xs text-white py-4 rounded-xl font-bold hover:bg-emerald-500 transition-colors shadow-lg active:scale-[0.98] duration-200">
+                            <button
+                                onClick={scrollToResults}
+                                className="w-full bg-black text-xs text-white py-4 rounded-xl font-bold hover:bg-emerald-500 transition-colors shadow-lg active:scale-[0.98] duration-200"
+                            >
                                 Search Vehicles
                             </button>
                         </div>
@@ -215,6 +322,7 @@ function CarsContent() {
                                         onChange={(e) => setSortBy(e.target.value)}
                                         className="pl-4 pr-10 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent cursor-pointer shadow-sm transition-all hover:border-gray-300"
                                     >
+                                        <option value="id">Default (ID)</option>
                                         <option value="newest">Newest First</option>
                                         <option value="price-asc">Price: Low to High</option>
                                         <option value="price-desc">Price: High to Low</option>
@@ -229,7 +337,7 @@ function CarsContent() {
                                 <RefreshCw className="w-8 h-8 animate-spin text-gray-400" />
                             </div>
                         ) : filteredVehicles.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                            <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                                 {filteredVehicles.map(vehicle => (
                                     <VehicleCard key={vehicle.id} vehicle={vehicle} />
                                 ))}

@@ -18,7 +18,7 @@ export default function BrandCarousel({ brands, isHome = false }: BrandCarouselP
         <section className="py-20 bg-white overflow-hidden">
             <div className={`mx-auto px-6 mb-12 text-center ${isHome ? '' : 'hidden'}`}>
                 <h2 className="text-3xl md:text-5xl font-light text-black">
-                    <span className="">Rent Your Favorite Luxury Brand</span>
+                    <span className="">Rent Your Favorite Reliable Brand</span>
                 </h2>
             </div>
 

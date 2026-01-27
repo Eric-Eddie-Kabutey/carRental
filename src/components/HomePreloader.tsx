@@ -3,7 +3,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
-export default function HomePreloader() {
+interface HomePreloaderProps {
+    onVideoReady?: () => void
+}
+
+export default function HomePreloader({ onVideoReady }: HomePreloaderProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const [selectedVideo, setSelectedVideo] = useState<string>('')
@@ -20,7 +24,11 @@ export default function HomePreloader() {
                 gsap.to(videoRef.current, {
                     opacity: 0.6,
                     duration: 1.5,
-                    ease: 'power2.out'
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        window.dispatchEvent(new CustomEvent('app-video-ready'))
+                        if (onVideoReady) onVideoReady()
+                    }
                 })
             }
 
@@ -34,7 +42,7 @@ export default function HomePreloader() {
                 clearTimeout(fallback)
             }
         }
-    }, [selectedVideo])
+    }, [selectedVideo, onVideoReady])
 
     return (
         <div
@@ -49,7 +57,6 @@ export default function HomePreloader() {
                         autoPlay
                         muted
                         playsInline
-                        loop
                         className="w-full h-full object-cover opacity-0 transition-none"
                     />
                     <div className="absolute inset-0 bg-black/60" />

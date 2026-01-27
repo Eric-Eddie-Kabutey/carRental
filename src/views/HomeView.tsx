@@ -19,28 +19,43 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ vehicles, faqs, brands, testimonials }: HomeViewProps) {
+    const [videoReady, setVideoReady] = React.useState(false)
+    const [heroLoaded, setHeroLoaded] = React.useState(false)
+
+    const handleVideoReady = React.useCallback(() => {
+        setVideoReady(true)
+    }, [])
+
+    const handleHeroLoaded = React.useCallback(() => {
+        setHeroLoaded(true)
+    }, [])
+
     return (
         <main className="min-h-screen relative">
-            <HomePreloader />
-            <Hero />
+            <HomePreloader key="home-video" onVideoReady={handleVideoReady} />
+            <Hero key="home-hero" show={videoReady} onLoaded={handleHeroLoaded} />
 
-            {/* <AnimateOnScroll animation="fade-in-up"> */}
-            <FeaturedCarousel vehicles={vehicles} />
-            {/* </AnimateOnScroll> */}
+            {heroLoaded && (
+                <>
+                    {/* <AnimateOnScroll animation="fade-in-up"> */}
+                    <FeaturedCarousel vehicles={vehicles} />
+                    {/* </AnimateOnScroll> */}
 
-            {/* <AnimateOnScroll animation="fade-in-up" delay={200}> */}
-            <BrandCarousel brands={brands} isHome={true} />
-            {/* </AnimateOnScroll> */}
+                    {/* <AnimateOnScroll animation="fade-in-up" delay={200}> */}
+                    <BrandCarousel brands={brands} isHome={true} />
+                    {/* </AnimateOnScroll> */}
 
-            {/* <AnimateOnScroll animation="fade-in-up"> */}
-            <HomeServices />
-            {/* </AnimateOnScroll> */}
+                    {/* <AnimateOnScroll animation="fade-in-up"> */}
+                    <HomeServices />
+                    {/* </AnimateOnScroll> */}
 
-            <HomeAbout />
+                    <HomeAbout />
 
-            <ReviewsCarousel testimonials={testimonials} />
+                    <ReviewsCarousel testimonials={testimonials} />
 
-            <FAQSection faqs={faqs} />
+                    <FAQSection faqs={faqs} />
+                </>
+            )}
         </main>
     )
 }

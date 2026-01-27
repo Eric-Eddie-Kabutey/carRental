@@ -5,16 +5,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: 'www.easycarrentals.gm',
       },
-      {
-        protocol: 'https',
-        hostname: 'www.luxuryrentals.gm',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.ghostrentals.com',
-      }
     ],
   },
 };

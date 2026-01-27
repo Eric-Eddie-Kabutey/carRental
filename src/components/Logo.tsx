@@ -12,7 +12,7 @@ interface LogoProps {
 export default function Logo({ className = '', light = true }: LogoProps) {
     return (
         <Link href="/" className={`flex items-center gap-3 group ${className}`}>
-            <div className="relative w-36 h-36 flex items-center justify-center">
+            <div className="relative w-36 h-auto flex items-center justify-center">
                 <ImageWithFallback
                     src="/logo.svg"
                     alt="Luxury Rentals Logo"

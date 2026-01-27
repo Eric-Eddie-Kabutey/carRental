@@ -52,7 +52,7 @@ export default function SignatureServices({ data }: SignatureServicesProps) {
                                     {rental?.description || 'Find the best Luxury Car Rentals in Gambia with Luxury Rentals. Choose from our premium fleet.'}
                                 </p>
                                 <Link
-                                    href="/services#rental"
+                                    href="/#services"
                                     className="inline-block border border-white/30 rounded-full px-8 py-2 text-xs font-bold text-white hover:bg-white hover:text-black transition-all"
                                 >
                                     Hire a Car
@@ -64,7 +64,7 @@ export default function SignatureServices({ data }: SignatureServicesProps) {
                                     {vip?.description || 'Rent Cars with VIP number plates in Gambia, unique Luxury symbols that turn any drive into a statement.'}
                                 </p>
                                 <Link
-                                    href="/services#vip"
+                                    href="/#services"
                                     className="inline-block border border-white/30 rounded-full px-8 py-2 text-xs font-bold text-white hover:bg-white hover:text-black transition-all"
                                 >
                                     Experience VIP
@@ -84,7 +84,7 @@ export default function SignatureServices({ data }: SignatureServicesProps) {
                             </p>
                         </div>
                         <Link
-                            href="/services#chauffeur"
+                            href="/#services"
                             className="w-full text-center border border-white/30 rounded-full py-4 text-sm font-bold text-white hover:bg-white hover:text-black transition-all"
                         >
                             Hire a Chauffeur

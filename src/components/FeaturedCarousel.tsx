@@ -92,11 +92,11 @@ export default function FeaturedCarousel({ vehicles }: FeaturedCarouselProps) {
                     {/* Scroll Area */}
                     <div
                         ref={scrollRef}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto pb-12 hide-scrollbar scroll-smooth snap-x snap-mandatory items-stretch"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-x-auto pb-12 hide-scrollbar scroll-smooth snap-x snap-mandatory items-stretch"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {vehicles.slice(0, 4).map((car) => (
-                            <div key={car.id} className="min-w-full md:min-w-[auto] snap-center flex">
+                            <div key={car.id} className="min-w-full md:min-w-auto snap-center flex">
                                 <VehicleCard vehicle={car} />
                             </div>
                         ))}
@@ -124,7 +124,7 @@ export default function FeaturedCarousel({ vehicles }: FeaturedCarouselProps) {
                 <div className="mt-8 text-center md:hidden">
                     <Link
                         href="/cars"
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-black font-bold hover:bg-black hover:text-white transition-all"
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-full border text-black border-black font-bold hover:bg-black hover:text-white transition-all"
                     >
                         View All Cars
                     </Link>

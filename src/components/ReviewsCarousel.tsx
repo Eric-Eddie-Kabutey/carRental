@@ -37,8 +37,8 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
 
     return (
         <section className="py-24 bg-gray-50 overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div className="container">
+                <div className=" flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
                     <AnimateOnScroll animation="fade-in-left">
                         <h2 className="text-4xl md:text-6xl font-light text-gray-900 uppercase tracking-tight">
                             Customer <br /> Reviews
@@ -65,7 +65,7 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
 
                 <div
                     ref={scrollRef}
-                    className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
+                    className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-10"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {testimonials.map((review, idx) => (
@@ -73,7 +73,7 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                             key={review.id}
                             className="min-w-[300px] md:min-w-[450px] snap-start bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col h-full"
                         >
-                            <div className="flex items-center justify-between mb-8">
+                            <div className="flex flex-col md:flex-row items-start gap-4 md:gap-0 md:items-center justify-between mb-8">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-emerald-700 flex items-center justify-center text-white font-bold text-xl uppercase">
                                         {review.name.charAt(0)}
@@ -95,7 +95,7 @@ export default function ReviewsCarousel({ testimonials }: ReviewsCarouselProps) 
                                 </div>
                             </div>
 
-                            <p className="text-gray-600 font-light leading-relaxed grow italic line-clamp-4">
+                            <p className="text-gray-600 font-light leading-relaxed grow italic">
                                 "{review.content}"
                             </p>
                         </div>

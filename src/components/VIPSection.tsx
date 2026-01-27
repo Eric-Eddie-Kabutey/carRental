@@ -14,11 +14,10 @@ export default function VIPSection() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-4xl md:text-6xl font-light text-black uppercase mb-4">Drive Like a VIP</h2>
-                                <h3 className="text-2xl md:text-3xl font-light text-gray-500 uppercase">Rent Cars with VIP Number Plates</h3>
+                                <h3 className="text-2xl md:text-3xl font-light text-gray-500 uppercase">Rent luxurious cars</h3>
                             </div>
                             <p className="text-gray-600 text-lg md:text-xl font-light leading-relaxed max-w-xl">
-                                Rent Cars with VIP number plates in Gambia, unique Luxury symbols that turn any drive into a statement.
-                                These highly demanded plates are more than just numbers—they are status symbols and conversation starters that demand respect and attention anywhere you go.
+                                Rent luxurious cars in Gambia, unique Luxury symbols that turn any drive into a statement.
                             </p>
                             <Link
                                 href="/cars"
@@ -31,7 +30,7 @@ export default function VIPSection() {
                     <AnimateOnScroll animation="fade-in-right" delay={200} className="order-1 md:order-2">
                         <div className="relative h-[500px] rounded-[40px] overflow-hidden shadow-2xl">
                             <ImageWithFallback
-                                src="/ilya-godze-4jd8GtBpIhM-unsplash.jpg"
+                                src="vehicles/genesis2019.jpg"
                                 alt="VIP Number Plate"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />

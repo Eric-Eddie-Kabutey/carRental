@@ -12,25 +12,26 @@ export default function WhyUs({ dark = false }: WhyUsProps) {
     const features = [
         {
             icon: '/whyUs/cars.webp',
-            title: 'Luxury Cars for Rent in Gambia',
-            desc: 'Luxury Cars and VIP rentals suitable for family and business use.'
+            title: 'Affordable & Reliable Cars for Rent in Gambia',
+            desc: 'Budget-friendly, dependable rentals perfect for family & business trips.'
         },
         {
             icon: '/whyUs/top-rating.webp',
-            title: 'Top Rated Car Rental Service in Gambia',
-            desc: 'Building lasting relationships through exceptional service.'
+            title: 'Trusted Car Rental Service in Gambia',
+            desc: 'We keep customers happy with reliable cars, fair pricing, and great support.'
         },
         {
             icon: '/whyUs/247-black.svg',
-            title: '24/7 Cars Available for Rent in Gambia',
-            desc: 'Instant booking with 24/7 service assistance.'
+            title: '24/7 Car Rentals Available in Gambia',
+            desc: 'Fast booking and 24/7 assistance whenever you need help.'
         },
         {
             icon: '/whyUs/map-black.svg',
-            title: 'Luxury Car Rental Services Available Throughout Gambia',
-            desc: 'Enjoy seamless doorstep delivery across the Gambia.'
+            title: 'Car Rentals Available Across The Gambia',
+            desc: 'Convenient doorstep delivery anywhere in The Gambia.'
         }
-    ]
+    ];
+
 
     return (
         <section className={`py-24 ${dark ? 'bg-black' : 'bg-white'}`}>

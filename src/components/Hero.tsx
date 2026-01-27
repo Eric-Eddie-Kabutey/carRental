@@ -4,17 +4,33 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import gsap from 'gsap'
 
-export default function Hero() {
+interface HeroProps {
+    onLoaded?: () => void
+    show?: boolean
+}
+
+export default function Hero({ onLoaded, show = true }: HeroProps) {
     const containerRef = useRef<HTMLDivElement>(null)
+    const hasAnimated = useRef(false)
     const router = useRouter()
     const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
-        gsap.fromTo(containerRef.current,
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 1.5, delay: 2.5, ease: 'power3.out' }
-        )
-    }, [])
+        if (show && !hasAnimated.current && containerRef.current) {
+            hasAnimated.current = true
+            gsap.to(containerRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                    ease: 'power3.out',
+                    onComplete: () => {
+                        if (onLoaded) onLoaded()
+                    }
+                }
+            )
+        }
+    }, [show, onLoaded])
 
     const handleSearch = () => {
         if (searchQuery.trim()) {
@@ -31,20 +47,20 @@ export default function Hero() {
     }
 
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative h-auto md:h-screen flex items-center justify-center overflow-hidden">
             <div
                 ref={containerRef}
-                className="container relative z-10 px-6 text-center text-white"
+                className="container relative z-10 px-6 text-center text-white opacity-0 transform translate-y-8"
             >
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                    DRIVE <span className="text-emerald-500">THE LEGEND.</span>
+                <h1 className="text-5xl mt-64 md:mt-0 md:text-7xl font-bold mb-6 tracking-tight">
+                    DRIVE <span className="text-emerald-500">WITH CONFIDENCE.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Experience the pinnacle of luxury and performance in Gambia. No deposit required for loyal members.
+                    Affordable, reliable car rentals in The Gambia—clean vehicles, smooth bookings, and support when you need it.
                 </p>
 
 
-                <div className="bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 max-w-lg mx-auto flex items-center shadow-2xl">
+                <div className="bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20 max-w-lg mx-auto flex items-center shadow-2xl mb-32 md:mb-0">
                     <input
                         type="text"
                         placeholder="Search a car (e.g. Mercedes, Tucson...)"
